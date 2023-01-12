@@ -1,0 +1,40 @@
+﻿@model Cat
+
+@{
+    ViewData["Title"] = "Skapa";
+}
+
+<h1>Skapa en ny katt</h1>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Katt</h4>
+        <hr />
+        <!-- Detta är fältet där du kan skriva in kattens namn -->
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Detta är fältet där du kan välja färgen på katten -->
+        <div class="form-group">
+            <label asp-for="Color" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Skapa" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Tillbaka till listan</a>
+</div>
