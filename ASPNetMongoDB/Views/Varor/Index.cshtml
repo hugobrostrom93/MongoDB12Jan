@@ -1,24 +1,22 @@
-﻿@model IEnumerable<ASPNetMongoDB.Models.Cat>
+﻿@model IEnumerable<ASPNetMongoDB.Models.Vara>
 
 @{
-    ViewData["Title"] = "Kattlista";
+    ViewData["Title"] = "Varulista";
 }
 
-<h1>Kattlista</h1>
+<h1>Varulista</h1>
 
 <p>
-    <a asp-action="Create">Skapa ny</a>
+    <a asp-action="Create">Skapa ny vara</a>
 </p>
 <table id="catto" class="display" style="width:100%">
     <thead>
         <tr>
             <th>
-                <!-- Detta är namnet på katten -->
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Produkt)
             </th>
             <th>
-                <!-- Detta är färgen på katten -->
-                @Html.DisplayNameFor(model => model.Color)
+                @Html.DisplayNameFor(model => model.Pris)
             </th>
             <th>
                 Verktyg
@@ -30,11 +28,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.Produkt)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Color)
-                </td>
+                    @Html.DisplayFor(modelItem => item.Pris)
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Redigera</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

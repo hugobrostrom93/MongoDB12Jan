@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ASPNetMongoDB.Models.Kund>
+
+@{
+    ViewData["Title"] = "Kundlista";
+}
+
+<h1>Kundlista</h1>
+
+<p>
+    <a asp-action="Create">Skapa ny kund</a>
+</p>
+<table id="catto" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Namn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emailadress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefonnummer)
+            </th>
+            <th>
+                Verktyg
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Namn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emailadress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefonnummer)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Redigera</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#catto').DataTable();
+    });
+</script>

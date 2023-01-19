@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ASPNetMongoDB.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ASPNetMongoDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ASPNetMongoDBContext") ?? throw new InvalidOperationException("Connection string 'ASPNetMongoDBContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

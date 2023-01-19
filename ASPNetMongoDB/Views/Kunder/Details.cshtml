@@ -1,0 +1,68 @@
+﻿@model ASPNetMongoDB.Models.ViewModel
+@{
+    ViewData["Title"] = "Kundens beställningar";
+}
+<h1>Kundens beställningar</h1>
+
+<div class="row">
+    <div class="col-md-2">
+        <h4>Person</h4>
+        <hr />
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kund.Id)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Kund.Id)
+                </dd>
+                
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kund.Namn)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Kund.Namn)
+                </dd>
+                
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kund.Adress)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Kund.Adress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kund.Emailadress)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Kund.Emailadress)
+                </dd>
+                
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kund.Telefonnummer)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Kund.Telefonnummer)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<table id="catto" class="display" style="width:100%">
+    
+    <tbody>
+        <b>Köphistorik</b>
+        @foreach (var item in Model.Order) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Namn)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div>
+    <a asp-action="Index">Tillbaka till listan</a>
+</div>

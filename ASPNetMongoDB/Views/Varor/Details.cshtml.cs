@@ -1,8 +1,8 @@
-namespace ASPNetMongoDB.Views.Cats;
+namespace ASPNetMongoDB.Views.Vara;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-public class EditModel : PageModel
+public class DetailsModel : PageModel
 {
     public void OnGet()
     {

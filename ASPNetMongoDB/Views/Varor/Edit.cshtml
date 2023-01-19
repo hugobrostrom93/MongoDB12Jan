@@ -1,0 +1,41 @@
+﻿@model Vara
+
+@{
+    ViewData["Title"] = "Redigera";
+}
+
+<h1>Redigera varor</h1>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Vara</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Produkt" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Produkt" class="form-control" />
+                <span asp-validation-for="Produkt" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Pris" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Pris" class="form-control" />
+                <span asp-validation-for="Pris" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Tillbaka till listan</a>
+</div>

@@ -1,4 +1,4 @@
-namespace ASPNetMongoDB.Views.Cats;
+namespace ASPNetMongoDB.Views.Kund;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ASPNetMongoDB.Models.Order>
+
+@{
+    ViewData["Title"] = "Orderlista";
+}
+
+<h1>Orderlista</h1>
+
+<p>
+    <a asp-action="Create">Skapa en ny order</a>
+</p>
+<table id="catto" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Namn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KundId)
+            </th>
+            <th>
+                Verktyg
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Namn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KundId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.KundId">Redigera</a> |
+                    <a asp-action="Details" asp-route-id="@item.KundId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.KundId">Radera</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#catto').DataTable();
+    });
+</script>
